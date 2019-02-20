@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import withNav from '../../hoc/Sidebar';
+import withFloatButton from '../../hoc/FloatButton';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getNote } from '../../redux/actionCreators/noteActions';
@@ -31,4 +32,4 @@ const matchStateToProps = state => ({
   note: state.notes.note
 });
 
-export default withNav(connect(matchStateToProps, matchDispatchToProps)(Note));
+export default withNav(withFloatButton(connect(matchStateToProps, matchDispatchToProps)(Note)));

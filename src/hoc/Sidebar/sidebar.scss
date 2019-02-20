@@ -7,24 +7,6 @@
     flex-direction: column;
     width: 200px;
     background: #49806f;
-    
-
-    &__notes {
-      display: flex;
-      white-space: nowrap;
-      color: #fff;
-      font-weight: 500;
-      height: 2em;
-      align-items: center;
-      padding-left: 20px;
-
-      &:hover {
-        cursor: pointer;
-        background: #fff;
-        width: 100%;
-        color: #49806f;
-      }
-    }
   }
 
   &__content {
@@ -50,4 +32,16 @@
 .note-link {
   text-decoration: none;
   color: #fff;
+  align-items: center;
+  
+  &__active {
+    background: #fff;
+    padding: 10px 5px 10px 20px;
+    color: #49806f;
+  }
+
+  &__inactive {
+    padding: 10px 5px 10px 20px;
+    background: #49806f;
+  }
 }

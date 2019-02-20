@@ -1,0 +1,21 @@
+.add-note {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 15px 20px;
+  border-radius: 50%;
+  background: #49806f;
+  margin-right: 3em;
+  margin-bottom: 3em;
+  color: #fff;
+  box-shadow: 2px 4px 8px #363636;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background: #7dac9e;
+  }
+}

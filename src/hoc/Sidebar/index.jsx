@@ -28,12 +28,19 @@ const withNav = PassedComponent => {
     };
 
     renderNotes = () => {
-      const { notes, isLoading } = this.props.notes;
+      const { notes, isLoading, note: selectedNote } = this.props.notes;
       return (
         !isLoading && notes && notes.map(note => {
+          const isActive = note.id === selectedNote.id;
+          console.log(isActive)
           return (
-            <Link onClick={() => this.handleClick(note.id)} className="note-link" key={note.id} to={`/notes/${note.id}`}>
-              <div className="container__sidebar__notes">
+            <Link 
+              onClick={() => this.handleClick(note.id)} 
+              className="note-link" 
+              key={note.id} 
+              to={`/notes/${note.id}`}
+            >
+              <div className={isActive ? 'note-link__active' : 'note-link__inactive'} >
                 {note.title}
               </div>
             </Link>   
@@ -60,7 +67,12 @@ const withNav = PassedComponent => {
   const  mapStateToProps = state => ({
       notes: state.notes
     });
-  return connect(mapStateToProps, {getNotes, getNote })(SideBar);
+
+  const actionCreators = {
+    getNotes,
+    getNote
+  }
+  return connect(mapStateToProps, actionCreators)(SideBar);
 }
 
 export default withNav;
