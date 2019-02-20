@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  height: 100vh;
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background: #49806f;
+    
+
+    &__notes {
+      display: flex;
+      white-space: nowrap;
+      color: #fff;
+      font-weight: 500;
+      height: 2em;
+      align-items: center;
+      padding-left: 20px;
+
+      &:hover {
+        cursor: pointer;
+        background: #fff;
+        width: 100%;
+        color: #49806f;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    padding: 1em 2em;
+  }
+}
+
+.brand {
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2em;
+  justify-content: center;
+  padding: 1.2em 0 0.5em 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.note-link {
+  text-decoration: none;
+  color: #fff;
+}
